@@ -1,0 +1,10 @@
+{
+  "name": "ShinyEffectForUGUI",
+  "version": "2.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mob-sakai/ShinyEffectForUGUI.git"
+  },
+  "src": "Assets/ShinyEffectForUGUI",
+  "license": "MIT"
+}
