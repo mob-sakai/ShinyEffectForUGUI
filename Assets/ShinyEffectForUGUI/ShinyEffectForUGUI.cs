@@ -16,7 +16,7 @@ namespace Coffee.UIExtensions
 	/// </summary>
 	[ExecuteInEditMode]
 	[DisallowMultipleComponent]
-	public class ShinyEffectForUGUI : BaseMeshEffect
+	public class ShinyEffectForUGUI : BaseMeshEffect, ISerializationCallbackReceiver
 	{
 		//################################
 		// Constant or Static Members.
@@ -166,8 +166,6 @@ namespace Coffee.UIExtensions
 		//################################
 		// Private Members.
 		//################################
-		static readonly List<UIVertex> s_Verts = new List<UIVertex>();
-
 		/// <summary>
 		/// Mark the UIEffect as dirty.
 		/// </summary>

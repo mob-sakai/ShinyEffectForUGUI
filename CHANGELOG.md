@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.3.0](https://github.com/mob-sakai/ShinyEffectForUGUI/tree/v0.3.0) (2018-04-09)
+
+[Full Changelog](https://github.com/mob-sakai/ShinyEffectForUGUI/compare/v0.2.0...v0.3.0)
+
+**Fixed bugs:**
+
+- Bug: Material is not set automatically [\#7](https://github.com/mob-sakai/ShinyEffectForUGUI/issues/7)
+
 ## [v0.2.0](https://github.com/mob-sakai/ShinyEffectForUGUI/tree/v0.2.0) (2018-04-09)
 
 [Full Changelog](https://github.com/mob-sakai/ShinyEffectForUGUI/compare/v0.1.0...v0.2.0)
