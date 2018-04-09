@@ -1,12 +1,12 @@
 ShinyEffectForUGUI
 ===
 
-ShinyEffectForUGUI
+### NOTE: This project *will* be merged to [UIEffect](https://github.com/mob-sakai/UIEffect).
 
 Shiny effect without Mask commponent.  
 Since useless draw calls are suppressed, performance is good!
 
-![4 -06-2018 16-14-09](https://user-images.githubusercontent.com/12690315/38418624-2d210df8-39d8-11e8-9b92-493a4ada60f8.gif)
+![4 -09-2018 22-45-47](https://user-images.githubusercontent.com/12690315/38501362-c56e3768-3c47-11e8-9ec1-50343d8b83ad.gif)
 
 [![](https://img.shields.io/github/release/mob-sakai/ShinyEffectForUGUI.svg?label=latest%20version)](https://github.com/mob-sakai/ShinyEffectForUGUI/release)
 [![](https://img.shields.io/github/release-date/mob-sakai/ShinyEffectForUGUI.svg)](https://github.com/mob-sakai/ShinyEffectForUGUI/releases)  
@@ -17,7 +17,7 @@ Since useless draw calls are suppressed, performance is good!
 [![](https://img.shields.io/github/commits-since/mob-sakai/ShinyEffectForUGUI/latest.svg)](https://github.com/mob-sakai/ShinyEffectForUGUI/compare/master...develop)
 
 
-<< [Description](#Description) | [WebGL Demo](#demo) | [Download](https://github.com/mob-sakai/ShinyEffectForUGUI/releases) | [Usage](#usage) | [Development Note](#development-note) | [Change log](https://github.com/mob-sakai/ShinyEffectForUGUI/blob/develop/CHANGELOG.md) >>
+<< [Description](#Description) | [Demo](#demo) | [Download](https://github.com/mob-sakai/ShinyEffectForUGUI/releases) | [Usage](#usage) | [Development Note](#development-note) | [Change log](https://github.com/mob-sakai/ShinyEffectForUGUI/blob/develop/CHANGELOG.md) >>
 
 
 
@@ -48,7 +48,7 @@ This will suppress extra draw calls and improve performance.
 <br><br><br><br>
 ## Demo
 
-[WebGL Demo](https://)
+![4 -09-2018 23-15-12](https://user-images.githubusercontent.com/12690315/38503024-f1055fd8-3c4b-11e8-9065-841c75728498.gif)
 
 
 
