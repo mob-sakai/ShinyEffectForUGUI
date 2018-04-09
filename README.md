@@ -3,12 +3,10 @@ ShinyEffectForUGUI
 
 ShinyEffectForUGUI
 
-Shiny effect without Mask commponent.
+Shiny effect without Mask commponent.  
 Since useless draw calls are suppressed, performance is good!
 
 ![4 -06-2018 16-14-09](https://user-images.githubusercontent.com/12690315/38418624-2d210df8-39d8-11e8-9b92-493a4ada60f8.gif)
-
-Comming soon!
 
 [![](https://img.shields.io/github/release/mob-sakai/ShinyEffectForUGUI.svg?label=latest%20version)](https://github.com/mob-sakai/ShinyEffectForUGUI/release)
 [![](https://img.shields.io/github/release-date/mob-sakai/ShinyEffectForUGUI.svg)](https://github.com/mob-sakai/ShinyEffectForUGUI/releases)  
@@ -26,6 +24,25 @@ Comming soon!
 <br><br><br><br>
 ## Description
 
+ShinyEffectForUGUI applies _shiny-effect_ to uGUI element (Image, RawImage, Text, etc...) **WITHOUT Mask component** .  
+This will suppress extra draw calls and improve performance.
+
+![image](https://user-images.githubusercontent.com/12690315/38498655-16f9d766-3c40-11e8-8e47-4718d531c948.png)
+
+
+* Without-mask method
+    * Be applied shiny effect by shader
+    * 1 draw dall
+    * Will be batched as possible
+* With-mask method
+    * For example: ShineEffect from [unity-ui-extensions](https://bitbucket.org/UnityUIExtensions/unity-ui-extensions)
+    * Graphic + Mask + ShineEffect (masked)
+        * ![image](https://user-images.githubusercontent.com/12690315/38498601-ec56963e-3c3f-11e8-9eb4-4723389032f2.png)
+    * At least 3 draw calls, **for each** ui elements with shiny effect
+        * Stencil on
+        * Draw graphic
+        * Stensil off
+    * Artifacts on the edges
 
 
 <br><br><br><br>
@@ -52,12 +69,16 @@ Comming soon!
 
 
 
-
 <br><br><br><br>
 ## Development Note
 
 #### What's doing?
 
+* Control effect parameters for uGUI element WITHOUT MaterialPropertyBlock
+    * https://github.com/mob-sakai/UIEffect#how-to-control-effect-parameters-for-ugui-element-without-materialpropertyblock
+* Directivity normalization
+    * Likely `Vector2.Product()`
+* Linear shiny effect
 
 
 
