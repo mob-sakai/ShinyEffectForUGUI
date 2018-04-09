@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.2.0](https://github.com/mob-sakai/ShinyEffectForUGUI/tree/v0.2.0) (2018-04-09)
+
+[Full Changelog](https://github.com/mob-sakai/ShinyEffectForUGUI/compare/v0.1.0...v0.2.0)
+
+**Fixed bugs:**
+
+- Bug: Clipping is disabled. [\#5](https://github.com/mob-sakai/ShinyEffectForUGUI/issues/5)
+
 ## [v0.1.0](https://github.com/mob-sakai/ShinyEffectForUGUI/tree/v0.1.0) (2018-04-09)
 
 [Full Changelog](https://github.com/mob-sakai/ShinyEffectForUGUI/compare/3aa9ebbad004f7a812c93133f90336b06ffd034f...v0.1.0)
