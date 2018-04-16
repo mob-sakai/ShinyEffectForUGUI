@@ -6,6 +6,7 @@ ShinyEffectForUGUI
 Shiny effect without Mask commponent.  
 Since useless draw calls are suppressed, performance is good!
 
+![image](https://user-images.githubusercontent.com/12690315/38797629-10a22922-419a-11e8-8b68-50be7f8856a5.png)
 ![4 -09-2018 22-45-47](https://user-images.githubusercontent.com/12690315/38501362-c56e3768-3c47-11e8-9ec1-50343d8b83ad.gif)
 
 [![](https://img.shields.io/github/release/mob-sakai/ShinyEffectForUGUI.svg?label=latest%20version)](https://github.com/mob-sakai/ShinyEffectForUGUI/release)
