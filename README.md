@@ -29,19 +29,17 @@ This will suppress extra draw calls and improve performance.
 
 ![compare](https://user-images.githubusercontent.com/12690315/40418786-39ad8b04-5ebe-11e8-91b9-2246a3d08a8c.gif)
 
-* Without-mask method
-    * Be applied shiny effect by shader
-    * 1 draw dall
-    * Will be batched as possible
 * With-mask method
     * For example: ShineEffect from [unity-ui-extensions](https://bitbucket.org/UnityUIExtensions/unity-ui-extensions)
-    * Graphic + Mask + ShineEffect (masked)
+    * 3 GameObject: Graphic + Mask + ShineEffect (masked)
         * ![image](https://user-images.githubusercontent.com/12690315/38498601-ec56963e-3c3f-11e8-9eb4-4723389032f2.png)
-    * At least 3 draw calls, **for each** ui elements with shiny effect
-        * Stencil on
-        * Draw graphic
-        * Stensil off
-    * Artifacts on the edges
+    * At least 3 draw calls(1:Stencil on, 2:Draw graphic, 3:Stensil off), **FOR EACH** ui elements with shiny effect
+    * **Artifacts on the edges!**  
+
+* **Proposal:** Without-mask method
+    * shader applies shiny effect
+    * 1 draw dall
+    * Will be batched as possible
 
 <br><br>
 ##### Features
