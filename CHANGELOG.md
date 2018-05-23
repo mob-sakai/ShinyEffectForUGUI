@@ -1,5 +1,17 @@
 # Changelog
 
+## [v0.3.1](https://github.com/mob-sakai/ShinyEffectForUGUI/tree/v0.3.1) (2018-05-23)
+
+[Full Changelog](https://github.com/mob-sakai/ShinyEffectForUGUI/compare/v0.3.0...v0.3.1)
+
+**Implemented enhancements:**
+
+- Update readme & demo [\#10](https://github.com/mob-sakai/ShinyEffectForUGUI/issues/10)
+
+**Fixed bugs:**
+
+- Compile error has ocurred in build [\#11](https://github.com/mob-sakai/ShinyEffectForUGUI/issues/11)
+
 ## [v0.3.0](https://github.com/mob-sakai/ShinyEffectForUGUI/tree/v0.3.0) (2018-04-09)
 
 [Full Changelog](https://github.com/mob-sakai/ShinyEffectForUGUI/compare/v0.2.0...v0.3.0)

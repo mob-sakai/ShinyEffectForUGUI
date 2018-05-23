@@ -6,8 +6,7 @@ ShinyEffectForUGUI
 Shiny effect without Mask commponent.  
 Since useless draw calls are suppressed, performance is good!
 
-![image](https://user-images.githubusercontent.com/12690315/38797629-10a22922-419a-11e8-8b68-50be7f8856a5.png)
-![4 -09-2018 22-45-47](https://user-images.githubusercontent.com/12690315/38501362-c56e3768-3c47-11e8-9ec1-50343d8b83ad.gif)
+![image](https://user-images.githubusercontent.com/12690315/40420283-e22f7928-5ec2-11e8-903e-392c2b77f765.png)
 
 [![](https://img.shields.io/github/release/mob-sakai/ShinyEffectForUGUI.svg?label=latest%20version)](https://github.com/mob-sakai/ShinyEffectForUGUI/release)
 [![](https://img.shields.io/github/release-date/mob-sakai/ShinyEffectForUGUI.svg)](https://github.com/mob-sakai/ShinyEffectForUGUI/releases)  
@@ -28,28 +27,35 @@ Since useless draw calls are suppressed, performance is good!
 ShinyEffectForUGUI applies _shiny-effect_ to uGUI element (Image, RawImage, Text, etc...) **WITHOUT Mask component** .  
 This will suppress extra draw calls and improve performance.
 
-![image](https://user-images.githubusercontent.com/12690315/38498655-16f9d766-3c40-11e8-8e47-4718d531c948.png)
+![compare](https://user-images.githubusercontent.com/12690315/40418786-39ad8b04-5ebe-11e8-91b9-2246a3d08a8c.gif)
 
-
-* Without-mask method
-    * Be applied shiny effect by shader
-    * 1 draw dall
-    * Will be batched as possible
 * With-mask method
     * For example: ShineEffect from [unity-ui-extensions](https://bitbucket.org/UnityUIExtensions/unity-ui-extensions)
-    * Graphic + Mask + ShineEffect (masked)
+    * 3 GameObject: Graphic + Mask + ShineEffect (masked)
         * ![image](https://user-images.githubusercontent.com/12690315/38498601-ec56963e-3c3f-11e8-9eb4-4723389032f2.png)
-    * At least 3 draw calls, **for each** ui elements with shiny effect
-        * Stencil on
-        * Draw graphic
-        * Stensil off
-    * Artifacts on the edges
+    * At least 3 draw calls(1:Stencil on, 2:Draw graphic, 3:Stensil off), **FOR EACH** ui elements with shiny effect
+    * **Artifacts on the edges!**  
+
+* **Proposal:** Without-mask method
+    * shader applies shiny effect
+    * 1 draw dall
+    * Will be batched as possible
+
+<br><br>
+##### Features
+
+* No Mask component
+* Easy to control in inspector  
+![inspector](https://user-images.githubusercontent.com/12690315/40419715-25109b20-5ec1-11e8-8980-26e4a415b152.gif)
+* Supports AnimationClip
+* Will be batched as possible
+
 
 
 <br><br><br><br>
 ## Demo
 
-![4 -09-2018 23-15-12](https://user-images.githubusercontent.com/12690315/38503024-f1055fd8-3c4b-11e8-9065-841c75728498.gif)
+[WebGL Demo](http://mob-sakai.github.io/ShinyEffectForUGUI/)
 
 
 
