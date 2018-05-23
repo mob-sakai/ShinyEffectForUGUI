@@ -13,9 +13,11 @@
 
 
 # input release version
+echo -e "\n>> Start Github Release:"
 PACKAGE_NAME=`node -pe 'require("./package.json").name'`
-echo Github Release: $PACKAGE_NAME
-read -p "[? release version (for example: 1.0.0): " RELEASE_VERSION
+echo -e ">> Package name: ${PACKAGE_NAME}"
+CURRENT_VERSION=`grep -o -e "\"version\".*$" package.json | sed -e "s/\"version\": \"\(.*\)\".*$/\1/"`
+read -p "[? release version (for current: ${CURRENT_VERSION}): " RELEASE_VERSION
 [ -z "$RELEASE_VERSION" ] && exit
 
 
@@ -33,24 +35,18 @@ echo -e "\n>> Check unity editor... ${UNITY_VER} (${UNITY_EDITOR})"
 echo -e ">> OK"
 
 # generate change log
-echo -e "\n>> Generate change log..."
+CHANGELOG_GENERATOR_ARG=`grep -o -e ".*git\"$" package.json | sed -e "s/^.*\/\([^\/]*\)\/\([^\/]*\).git.*$/--user \1 --project \2/"`
+echo -e "\n>> Generate change log... ${CHANGELOG_GENERATOR_ARG}"
 TAG=v$RELEASE_VERSION
 git tag $TAG
 git push --tags
-github_changelog_generator
+github_changelog_generator ${CHANGELOG_GENERATOR_ARG}
 git tag -d $TAG
 git push --delete origin $TAG
 
 git diff -- CHANGELOG.md
 read -p "[? is the change log correct? (y/N):" yn
 case "$yn" in [yY]*) ;; *) exit ;; esac
-
-
-# export unitypackage
-PACKAGE_SRC=`node -pe 'require("./package.json").src'`
-echo -e "\n>> Export unitypackage... ${PACKAGE_SRC}"
-"$UNITY_EDITOR" -quit -batchmode -projectPath "`pwd`" -exportpackage "$PACKAGE_SRC" "$PACKAGE_NAME.unitypackage"
-echo -e ">> OK"
 
 
 # commit release files
@@ -69,6 +65,13 @@ git push origin master
 git checkout develop
 git merge --ff master
 git push origin develop
+
+
+# export unitypackage
+PACKAGE_SRC=`node -pe 'require("./package.json").src'`
+echo -e "\n>> Export unitypackage... ${PACKAGE_SRC}"
+"$UNITY_EDITOR" -quit -batchmode -projectPath "`pwd`" -exportpackage "$PACKAGE_SRC" "$PACKAGE_NAME.unitypackage"
+echo -e ">> OK"
 
 
 # upload unitypackage and release on Github
