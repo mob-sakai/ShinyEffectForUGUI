@@ -16,7 +16,10 @@ namespace Coffee.UIExtensions
 	/// </summary>
 	[ExecuteInEditMode]
 	[DisallowMultipleComponent]
-	public class ShinyEffectForUGUI : BaseMeshEffect, ISerializationCallbackReceiver
+	public class ShinyEffectForUGUI : BaseMeshEffect
+#if UNITY_EDITOR
+	, ISerializationCallbackReceiver
+#endif
 	{
 		//################################
 		// Constant or Static Members.
@@ -92,6 +95,7 @@ namespace Coffee.UIExtensions
 			base.OnDisable();
 		}
 
+#if UNITY_EDITOR
 		public void OnBeforeSerialize()
 		{
 		}
@@ -124,6 +128,7 @@ namespace Coffee.UIExtensions
 				.OfType<Material>()
 				.FirstOrDefault(x => x.name == name);
 		}
+#endif
 
 		/// <summary>
 		/// Modifies the mesh.
