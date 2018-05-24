@@ -6,7 +6,7 @@ ShinyEffectForUGUI
 Shiny effect without Mask commponent.  
 Since useless draw calls are suppressed, performance is good!
 
-![image](https://user-images.githubusercontent.com/12690315/40420283-e22f7928-5ec2-11e8-903e-392c2b77f765.png)
+![image](https://user-images.githubusercontent.com/12690315/40470027-4335bbf6-5f6d-11e8-8b8f-a130654d67db.png)
 
 [![](https://img.shields.io/github/release/mob-sakai/ShinyEffectForUGUI.svg?label=latest%20version)](https://github.com/mob-sakai/ShinyEffectForUGUI/release)
 [![](https://img.shields.io/github/release-date/mob-sakai/ShinyEffectForUGUI.svg)](https://github.com/mob-sakai/ShinyEffectForUGUI/releases)  
@@ -46,9 +46,15 @@ This will suppress extra draw calls and improve performance.
 
 * No Mask component
 * Easy to control in inspector  
-![inspector](https://user-images.githubusercontent.com/12690315/40419715-25109b20-5ec1-11e8-8980-26e4a415b152.gif)
+![inspector](https://user-images.githubusercontent.com/12690315/40481130-65978b02-5f8b-11e8-90f3-02cf73107c4b.gif)
 * Supports AnimationClip
 * Will be batched as possible
+* Play effect from script (v0.4.0)
+    * `ShinyEffectForUGUI.Play(duration, updateMode)`  
+    ![button](https://user-images.githubusercontent.com/12690315/40482409-a97b1a56-5f8f-11e8-819d-e75a40fd4fc5.gif)
+* Improve Visual quality (v0.4.0)  
+![image](https://user-images.githubusercontent.com/12690315/40473559-7416b086-5f77-11e8-97e4-d0de6137ea28.gif)
+    * The effect does not use other images such as normal map.
 
 
 
