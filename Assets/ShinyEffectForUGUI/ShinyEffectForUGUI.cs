@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 #if UNITY_EDITOR
@@ -33,7 +34,8 @@ namespace Coffee.UIExtensions
 		[SerializeField][Range(0, 1)] float m_Location = 0;
 		[SerializeField][Range(0, 1)] float m_Width = 0.25f;
 		[SerializeField][Range(0.01f, 1)] float m_Softness = 1f;
-		[SerializeField][Range(0, 1)] float m_Alpha = 1f;
+		[FormerlySerializedAs("m_Alpha")]
+		[SerializeField][Range(0, 1)] float m_Brightness = 1f;
 		[SerializeField][Range(-180, 180)] float m_Rotation;
 		[SerializeField] Material m_EffectMaterial;
 
@@ -61,11 +63,16 @@ namespace Coffee.UIExtensions
 		/// </summary>
 		public float softness { get { return m_Softness; } set { m_Softness = Mathf.Clamp(value, 0.01f, 1); _SetDirty(); } }
 
-
 		/// <summary>
 		/// Alpha for shiny effect.
 		/// </summary>
-		public float alpha { get { return m_Alpha; } set { m_Alpha = Mathf.Clamp(value, 0, 1); _SetDirty(); } }
+		[System.Obsolete ("Use brightness instead (UnityUpgradable) -> brightness")]
+		public float alpha { get { return m_Brightness; } set { m_Brightness = Mathf.Clamp(value, 0, 1); _SetDirty(); } }
+
+		/// <summary>
+		/// Brightness for shiny effect.
+		/// </summary>
+		public float brightness { get { return m_Brightness; } set { m_Brightness = Mathf.Clamp(value, 0, 1); _SetDirty(); } }
 
 		/// <summary>
 		/// Rotation for shiny effect.
@@ -167,7 +174,7 @@ namespace Coffee.UIExtensions
 				nomalizedPos = localMatrix * vertex.position;
 
 				vertex.uv1 = new Vector2(
-					_PackToFloat(Mathf.Clamp01(nomalizedPos.y), softness, width, alpha),
+					_PackToFloat(Mathf.Clamp01(nomalizedPos.y), softness, width, brightness),
 					location
 				);
 
