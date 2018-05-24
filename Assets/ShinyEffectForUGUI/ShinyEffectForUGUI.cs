@@ -54,7 +54,7 @@ namespace Coffee.UIExtensions
 		/// <summary>
 		/// Width for shiny effect.
 		/// </summary>
-		public float width { get { return m_Width; } set { m_Width = Mathf.Clamp(value, 0, 2); _SetDirty(); } }
+		public float width { get { return m_Width; } set { m_Width = Mathf.Clamp(value, 0, 1); _SetDirty(); } }
 
 		/// <summary>
 		/// Softness for shiny effect.
