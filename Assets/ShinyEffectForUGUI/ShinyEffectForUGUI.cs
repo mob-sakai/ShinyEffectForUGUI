@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using System.Collections;
 
 #if UNITY_EDITOR
 using System.IO;
@@ -188,6 +189,32 @@ namespace Coffee.UIExtensions
 			}
 		}
 
+		/// <summary>
+		/// Play effect.
+		/// </summary>
+		public void Play()
+		{
+			Play(1);
+		}
+
+		/// <summary>
+		/// Play effect.
+		/// </summary>
+		public void Play(float duration)
+		{
+			StopAllCoroutines();
+			StartCoroutine(CoPlay(duration, AnimatorUpdateMode.Normal));
+		}
+
+		/// <summary>
+		/// Play effect.
+		/// </summary>
+		public void Play(float duration, AnimatorUpdateMode updateMode)
+		{
+			StopAllCoroutines();
+			StartCoroutine(CoPlay(duration, updateMode));
+		}
+
 		//################################
 		// Private Members.
 		//################################
@@ -198,6 +225,19 @@ namespace Coffee.UIExtensions
 		{
 			if(graphic)
 				graphic.SetVerticesDirty();
+		}
+
+		IEnumerator CoPlay(float duration, AnimatorUpdateMode updateMode = AnimatorUpdateMode.Normal)
+		{
+			float time = 0;
+			while (time < duration)
+			{
+				location = time / duration;
+				time += updateMode == AnimatorUpdateMode.UnscaledTime
+					? Time.unscaledDeltaTime
+					: Time.deltaTime;
+				yield return null;
+			}
 		}
 
 		/// <summary>
