@@ -61,6 +61,8 @@ This will suppress extra draw calls and improve performance.
 <br><br><br><br>
 ## Demo
 
+![demo](https://user-images.githubusercontent.com/12690315/40488848-a6e8bbe6-5fa2-11e8-9a3e-0e3e57eb2385.gif)
+
 [WebGL Demo](http://mob-sakai.github.io/ShinyEffectForUGUI/)
 
 
