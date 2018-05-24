@@ -124,8 +124,9 @@ Shader "UI/Hidden/UI-Effect-Shiny"
 
 			fixed4 frag(v2f IN) : SV_Target
 			{
-				half4 color = (tex2D(_MainTex, IN.texcoord) + _TextureSampleAdd) * IN.color;
-
+				half4 color = (tex2D(_MainTex, IN.texcoord) + _TextureSampleAdd);
+				fixed4 originAlpha = color.a;
+				color *= IN.color;
 				color.a *= UnityGet2DClipping(IN.worldPosition.xy, _ClipRect);
 
 				#ifdef UNITY_UI_ALPHACLIP
@@ -136,9 +137,11 @@ Shader "UI/Hidden/UI-Effect-Shiny"
 				half normalized = 1 - saturate(abs(pos / IN.effectFactor.z));
 				half shinePower = smoothstep(0, 1, normalized);
 
-				color.rgb +=  color.a * (shinePower / 2) * IN.effectFactor.w;
+				color.rgb += originAlpha * (shinePower / 2) * IN.effectFactor.w;
 				return color;
 			}
+
+
 		ENDCG
 		}
 	}
