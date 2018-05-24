@@ -135,7 +135,7 @@ Shader "UI/Hidden/UI-Effect-Shiny"
 
 				half pos = IN.effectFactor.x - IN.location;
 				half normalized = 1 - saturate(abs(pos / IN.effectFactor.z));
-				half shinePower = smoothstep(0, 1, normalized);
+				half shinePower = smoothstep(0, IN.effectFactor.y, normalized);
 
 				color.rgb += originAlpha * (shinePower / 2) * IN.effectFactor.w;
 				return color;

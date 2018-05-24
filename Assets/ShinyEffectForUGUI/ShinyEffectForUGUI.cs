@@ -32,6 +32,7 @@ namespace Coffee.UIExtensions
 		//################################
 		[SerializeField][Range(0, 1)] float m_Location = 0;
 		[SerializeField][Range(0, 1)] float m_Width = 0.25f;
+		[SerializeField][Range(0.01f, 1)] float m_Softness = 1f;
 		[SerializeField][Range(0, 1)] float m_Alpha = 1f;
 		[SerializeField][Range(-180, 180)] float m_Rotation;
 		[SerializeField] Material m_EffectMaterial;
@@ -54,6 +55,12 @@ namespace Coffee.UIExtensions
 		/// Width for shiny effect.
 		/// </summary>
 		public float width { get { return m_Width; } set { m_Width = Mathf.Clamp(value, 0, 2); _SetDirty(); } }
+
+		/// <summary>
+		/// Softness for shiny effect.
+		/// </summary>
+		public float softness { get { return m_Softness; } set { m_Softness = Mathf.Clamp(value, 0.01f, 1); _SetDirty(); } }
+
 
 		/// <summary>
 		/// Alpha for shiny effect.
@@ -160,7 +167,7 @@ namespace Coffee.UIExtensions
 				nomalizedPos = localMatrix * vertex.position;
 
 				vertex.uv1 = new Vector2(
-					_PackToFloat(Mathf.Clamp01(nomalizedPos.y), location, width, alpha),
+					_PackToFloat(Mathf.Clamp01(nomalizedPos.y), softness, width, alpha),
 					location
 				);
 
