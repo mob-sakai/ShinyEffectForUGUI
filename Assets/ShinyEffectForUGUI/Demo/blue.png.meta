@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 6789beb7377034038b701aa05106933d
-timeCreated: 1523277470
+guid: e3026fd11e810463185dd5ba01e6d309
+timeCreated: 1527137553
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName: {}
@@ -94,7 +94,7 @@ TextureImporter:
     serializedVersion: 2
     sprites: []
     outline: []
-  spritePackingTag: 
+  spritePackingTag: Demo_ShinyEffectForUGUI
   userData: 
   assetBundleName: 
   assetBundleVariant: 
