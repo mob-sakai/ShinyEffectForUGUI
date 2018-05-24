@@ -161,7 +161,7 @@ namespace Coffee.UIExtensions
 
 				vertex.uv1 = new Vector2(
 					_PackToFloat(Mathf.Clamp01(nomalizedPos.y), location, width, alpha),
-					0
+					location
 				);
 
 				vh.SetUIVertex(vertex, i);

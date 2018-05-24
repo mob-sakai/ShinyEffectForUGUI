@@ -76,6 +76,7 @@ Shader "UI/Hidden/UI-Effect-Shiny"
 				UNITY_VERTEX_OUTPUT_STEREO
 				
 				half4 effectFactor : TEXCOORD2;
+				half location : TEXCOORD3;
 			};
 			
 			fixed4 _Color;
@@ -117,7 +118,7 @@ Shader "UI/Hidden/UI-Effect-Shiny"
 				OUT.color = IN.color * _Color;
 
 				OUT.effectFactor = UnpackToVec4(IN.uv1.x);
-				OUT.effectFactor.y = OUT.effectFactor.y * 2 - 0.5;
+				OUT.location = IN.uv1.y * 2 - 0.5;
 				return OUT;
 			}
 
@@ -131,9 +132,9 @@ Shader "UI/Hidden/UI-Effect-Shiny"
 				clip (color.a - 0.001);
 				#endif
 
-				fixed lowLevel = IN.effectFactor.y - IN.effectFactor.z;
-				fixed highLevel = IN.effectFactor.y + IN.effectFactor.z;
-				fixed shinePower = smoothstep(IN.effectFactor.z, 0, abs(abs(clamp(IN.effectFactor.x, lowLevel, highLevel) - IN.effectFactor.y)));
+				half pos = IN.effectFactor.x - IN.location;
+				half normalized = 1 - saturate(abs(pos / IN.effectFactor.z));
+				half shinePower = smoothstep(0, 1, normalized);
 
 				color.rgb +=  color.a * (shinePower / 2) * IN.effectFactor.w;
 				return color;
