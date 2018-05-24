@@ -1,5 +1,29 @@
 # Changelog
 
+## [v0.4.0](https://github.com/mob-sakai/ShinyEffectForUGUI/tree/v0.4.0) (2018-05-24)
+
+[Full Changelog](https://github.com/mob-sakai/ShinyEffectForUGUI/compare/v0.3.1...v0.4.0)
+
+Visual quality of the effect has been improved greatly!  
+Of course, the effect does not use other images such as normal map :)  
+![image](https://user-images.githubusercontent.com/12690315/40473559-7416b086-5f77-11e8-97e4-d0de6137ea28.gif)
+
+**Implemented enhancements:**
+
+- Play effect from script [\#19](https://github.com/mob-sakai/ShinyEffectForUGUI/issues/19)
+- Improve Visual quality [\#16](https://github.com/mob-sakai/ShinyEffectForUGUI/issues/16)
+- Add softness parameter [\#14](https://github.com/mob-sakai/ShinyEffectForUGUI/issues/14)
+- Improve precision of location parameter [\#12](https://github.com/mob-sakai/ShinyEffectForUGUI/issues/12)
+
+**Fixed bugs:**
+
+- Width of the effect should be ranged \[0-1\], not \[0-2\] [\#15](https://github.com/mob-sakai/ShinyEffectForUGUI/issues/15)
+- `graphic.color.a` decrease the brightness of shiny effect [\#13](https://github.com/mob-sakai/ShinyEffectForUGUI/issues/13)
+
+**Closed issues:**
+
+- Use 'brightness' instead of 'alpha' [\#17](https://github.com/mob-sakai/ShinyEffectForUGUI/issues/17)
+
 ## [v0.3.1](https://github.com/mob-sakai/ShinyEffectForUGUI/tree/v0.3.1) (2018-05-23)
 
 [Full Changelog](https://github.com/mob-sakai/ShinyEffectForUGUI/compare/v0.3.0...v0.3.1)
