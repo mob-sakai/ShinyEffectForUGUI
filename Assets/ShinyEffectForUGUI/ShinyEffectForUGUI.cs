@@ -37,6 +37,7 @@ namespace Coffee.UIExtensions
 		[FormerlySerializedAs("m_Alpha")]
 		[SerializeField][Range(0, 1)] float m_Brightness = 1f;
 		[SerializeField][Range(-180, 180)] float m_Rotation;
+		[SerializeField][Range(0, 1)] float m_Highlight = 1;
 		[SerializeField] Material m_EffectMaterial;
 
 
@@ -73,6 +74,11 @@ namespace Coffee.UIExtensions
 		/// Brightness for shiny effect.
 		/// </summary>
 		public float brightness { get { return m_Brightness; } set { m_Brightness = Mathf.Clamp(value, 0, 1); _SetDirty(); } }
+
+		/// <summary>
+		/// Highlight factor for shiny effect.
+		/// </summary>
+		public float highlight { get { return m_Highlight; } set { m_Highlight = Mathf.Clamp(value, 0, 1); _SetDirty(); } }
 
 		/// <summary>
 		/// Rotation for shiny effect.
@@ -175,7 +181,7 @@ namespace Coffee.UIExtensions
 
 				vertex.uv1 = new Vector2(
 					_PackToFloat(Mathf.Clamp01(nomalizedPos.y), softness, width, brightness),
-					location
+					_PackToFloat(location, highlight)
 				);
 
 				vh.SetUIVertex(vertex, i);
@@ -207,6 +213,16 @@ namespace Coffee.UIExtensions
 			+ Mathf.FloorToInt(x * PRECISION);
 		}
 
+		/// <summary>
+		/// Pack 2 low-precision [0-1] floats values to a float.
+		/// Each value [0-1] has 4096 steps(12 bits).
+		/// </summary>
+		static float _PackToFloat(float x, float y)
+		{
+			const int PRECISION = (1 << 12) - 1;
+			return (Mathf.FloorToInt(y * PRECISION) << 12)
+				+ Mathf.FloorToInt(x * PRECISION);
+		}
 
 
 		/// <summary>
