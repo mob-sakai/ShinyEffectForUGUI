@@ -1,7 +1,7 @@
 ShinyEffectForUGUI
 ===
 
-### NOTE: This project has been merged to [UIEffect](https://github.com/mob-sakai/UIEffect).
+### NOTE: This project has been integrated into [UIEffect](https://github.com/mob-sakai/UIEffect), so we are NOT continuing development in this repository.
 
 Shiny effect of uGUI, which does not need mask or normal map.  
 Since useless draw calls are suppressed, performance is good!
